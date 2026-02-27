@@ -1,0 +1,125 @@
+.playground-page {
+  min-height: calc(100vh - 73px);
+  padding: 3rem 0;
+}
+
+.playground-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.playground-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.playground-header h1 svg {
+  color: var(--primary);
+}
+
+.playground-header p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+.demo-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(233, 30, 99, 0.1);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.playground-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+.module-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.module-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.module-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.module-btn.active {
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.2), rgba(156, 39, 176, 0.2));
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.module-workspace {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 600px;
+}
+
+@media (max-width: 968px) {
+  .playground-content {
+    grid-template-columns: 1fr;
+  }
+
+  .module-selector {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .module-btn {
+    flex-shrink: 0;
+  }
+
+  .module-btn span {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .playground-header h1 {
+    font-size: 2rem;
+  }
+
+  .module-workspace {
+    padding: 1.5rem;
+  }
+}
